@@ -19,7 +19,7 @@ game.moveLeft = function () {
 			}, 3 * i)
 		}
 		game.player.animationFrameNumber++
-	}, 120)
+	}, 60)
 }
 
 game.moveRight = function () {
@@ -40,7 +40,7 @@ game.moveRight = function () {
 			}.bind(game), 3 * i)
 		}
 		game.player.animationFrameNumber++
-	}, 120)
+	}, 60)
 }
 
 game.clearMoveIntervals = function () {
@@ -49,8 +49,8 @@ game.clearMoveIntervals = function () {
 }
 
 game.keydown = function (event) {
-	if (!game.pressedKeys[event.keyCode]) { // Prevent key repeating
-		switch (event.keyCode) {
+	// if (!game.pressedKeys[event.keyCode]) { // Prevent key repeating
+	switch (event.keyCode) {
 		case 65:
 		case 37:
 			game.moveLeft()
@@ -63,8 +63,8 @@ game.keydown = function (event) {
 			game.player.jump()
 			break
 	}
-		game.pressedKeys[event.keyCode] = true
-	}
+	// 	game.pressedKeys[event.keyCode] = true
+	// }
 }
 
 game.keyup = function (event) {
@@ -78,5 +78,5 @@ game.keyup = function (event) {
 		case 39:
 			clearInterval(game.player.moveRightInterval)
 			break
-		}
+	}
 }
